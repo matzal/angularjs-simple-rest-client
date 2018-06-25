@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js'></script>
+        <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-resource.js'></script>
+        <script src='./rest-controller.js'></script>
+    </head>
+    <body ng-app='restAPIApp'>
+        <div ng-controller='restCountriesController'>
+            <div ng-repeat='country in countries'>
+                <p>Country name: {{ country.name }}</p>
+                <p>Capital name: {{ country.capital }}</p>
+                <div ng-repeat="currency in country.currencies">
+                    <p>Currency code: {{currency.code}}</p>
+                    <p>Currency name: {{currency.name}}</p>
+                    <p>Currency symbol: {{currency.symbol}}</p>
+                </div>
+                <br/>
+            </div>
+        </div>
+    </body>
+</html>
